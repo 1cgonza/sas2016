@@ -1,0 +1,264 @@
+/*===============================
+=            GENERAL            =
+===============================*/
+body {
+  font-family: $sans-serif;
+  font-size: 100%;
+  line-height: 1.4;
+  max-width: 1500px;
+  margin: 0 auto;
+  // background-color: #3B8DB0;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyIiBoZWlnaHQ9IjIiPjxwYXRoIGQ9Ik0tMiAxMEwxMCAtMlpNMTAgNkw2IDEwWk0tMiAyTDIgLTIiIHN0cm9rZT0iI2Y1ZjVmNSIgc3Ryb2tlLXdpZHRoPSIxLjUiPjwvcGF0aD4KPC9zdmc+"),url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgyPSIxIiB5Mj0iMSI+CjxzdG9wIHN0b3AtY29sb3I9IiNmZmZmZmYiPjwvc3RvcD4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYzlkZmU4Ij48L3N0b3A+CjwvbGluZWFyR3JhZGllbnQ+CjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiPjwvcmVjdD4KPC9zdmc+");
+
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ol {
+  padding-left: 1.4em;
+}
+/*-----  End of GENERAL  ------*/
+
+h1, h2, h3 {
+  font-family: $title-font;
+  font-weight: 400;
+  color: $title-color;
+}
+
+h1 {
+  font-size: 2.4em;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
+.highlight {
+  font-weight: bold;
+  border-bottom: 1px dotted;
+  // color: $dark-red;
+}
+
+/*==============================
+=            LAYOUT            =
+==============================*/
+// http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+main {
+  margin-bottom: 4em;
+
+  section {
+    padding: 0 1em;
+  }
+
+  .inner-section {
+    padding-right: 1em;
+  }
+
+  .section-title {
+  }
+
+  ul li {
+    padding: 0.2em 1em;
+
+    &::before {
+      content: '';
+      width: .3em;
+      height: .3em;
+      margin: 0.5em 0 0 -0.8em;
+      background-color: $title-color;
+      position: absolute;
+    }
+  }
+}
+
+// FLUID VIDEO
+.fluid-video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.inner-section-title {
+  margin: 0;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.zoom-font {
+  font-size: 115%;
+}
+
+
+/*-----  End of LAYOUT  ------*/
+
+/*=============================
+=            LINKS            =
+=============================*/
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:visited {
+
+  }
+
+  &:hover {
+    color: $link-hover;
+  }
+}
+
+.big-btn {
+  text-align: center;
+  padding: 0.3em 1.6em 1em;
+  background-image: url(../img/pegbar.svg);
+  color: white;
+  font-size: 1.2em;
+  margin: 0.5em 0;
+  display: inline-block;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+
+  &:hover {
+    color: lighten($light-blue, 25%);
+  }
+}
+/*-----  End of LINKS  ------*/
+
+/*===================================
+=            SITE HEADER            =
+===================================*/
+#site-header {
+  width: 100%;
+}
+
+#conference-date,
+#header-logo,
+#sponsors {
+  vertical-align: middle;
+}
+
+#conference-date {
+  margin: 0;
+  font-family: $title-font;
+  font-size: 0.8em;
+  font-weight: 300;
+  padding: 1em;
+
+  p {
+    margin: 0;
+  }
+}
+
+#header-logo {
+  padding: .5em 2em;
+  text-align: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+  }
+}
+
+.home-logo {
+  display: none;
+}
+
+#sponsors {
+  text-align: right;
+  margin: 0;
+
+  li {
+    display: block;
+    margin: 0.5em;
+
+    img {
+      height: 25px;
+    }
+  }
+}
+
+#main-menu {
+  font-family: $title-font;
+  .sub-menu {
+    display: none;
+  }
+
+  li {
+    margin: 0.3em 0.3em 0.3em 0;
+    padding: .5em 0;
+    display: inline-block;
+
+    a {
+      background-color: $light-red;
+      padding: .5em;
+      color: white;
+
+      &:hover {
+        background-color: darken($light-red, 8%);
+      }
+    }
+  }
+}
+
+/*-----  End of SITE HEADER  ------*/
+
+/*============================
+=            HOME            =
+============================*/
+.home-logo {
+  width: 100%;
+  text-align: center;
+
+  img {
+    width: 40%;
+  }
+}
+/*-----  End of HOME  ------*/
+
+
+
+/*===================================
+=            SITE FOOTER            =
+===================================*/
+#site-footer {
+  font-size: 0;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  p {
+    position: absolute;
+    width: 100%;
+    padding: 0 3em;
+    font-size: 12px;
+    top: 5%;
+    text-align: center;
+    color: white;
+  }
+}
+/*-----  End of SITE FOOTER  ------*/

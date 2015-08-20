@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ pageTitle title }}</title>
+  <meta name="description" content="{{ pageDescription description }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ pageTitle title }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ setURL path }}">
+  <meta property="og:image" content="{{ featuredImg image }}">
+  <meta property="og:description" content="{{ pageDescription description }}">
+  <meta property="og:site_name" content="{{ this.siteTitle }}">
+
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,700|Montserrat' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ setURL 'css/styles.css' }}">
+</head>
+<body>
+
+<header id="site-header">
+  <div id="conference-date" class="m-1of4 t-1of4 small-1of4 medium-1of3 large-1of3">
+    <p><time datetime="2016-06-26">June 26</time> - <time datetime="2016-06-30">30, 2016</time></p>
+  </div>
+
+  <div id="header-logo" class="m-1of2 t-1of2 small-1of2 medium-1of3 large-1of3 {{#if largeLogo}} large-logo {{/if}}">
+    <a href="{{ baseUrl }}"><img src="{{ setURL 'img/logo-COA.svg' }}" alt="SAS2016"></a>
+  </div>
+
+  <ul id="sponsors" class="m-1of4 t-1of4 small-1of4 medium-1of3 large-1of3">
+    {{#each logos }}
+      <li><a href="{{ this.url }}" title="{{ this.name }}" target="_blank"><img src="{{ setURL this.img }}" alt="{{ this.name }}"></a></li>
+    {{/each}}
+  </ul>
+
+</header>
+
+<aside class="m-all t-all small-1of3 medium-1of4 large-1of5">
+
+  <nav id="main-menu">
+    <ul>
+      <li><a href="{{ baseUrl }}">Home</a></li>
+      <li><a href="{{ setURL 'call-for-proposals' }}">Call for Proposals</a></li>
+{{!--       <li><a href="{{ setURL 'fees-registration' }}">Fees &amp; Registration</a></li>
+      <li>
+        <a href="{{ setURL 'keynotes' }}">Keynotes</a>
+        <ul class="sub-menu">
+          <li><a href="{{ setURL 'keynotes/keynote1' }}">Keynote1</a></li>
+          <li><a href="{{ setURL 'keynotes/keynote2' }}">Keynote2</a></li>
+          <li><a href="{{ setURL 'keynotes/keynote3' }}">Keynote3</a></li>
+        </ul>
+      </li>
+      <li><a href="{{ setURL 'presenters' }}">Presenters</a></li>
+      <li><a href="{{ setURL 'schedule' }}">Schedule</a></li>
+      <li><a href="{{ setURL 'gallery-exhibition' }}">Gallery Exhibition</a></li>
+      <li><a href="{{ setURL 'venue' }}">Venue</a></li>
+      <li><a href="{{ setURL 'accomodations' }}">Accommodation</a></li>
+      <li><a href="{{ setURL 'directions' }}">Directions</a></li>
+      <li><a href="{{ setURL 'local-attractions' }}">Local Attractions</a></li>
+      <li><a href="{{ setURL 'acknowledgements' }}">Acknowledgements</a></li>
+      <li><a href="{{ setURL 'pdf/sas2016-program.pdf' }}">Program PDF</a></li> --}}
+    </ul>
+  </nav>
+</aside>

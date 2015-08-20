@@ -1,0 +1,43 @@
+#conference-date {
+  font-size: 1.5em;
+}
+
+#header-logo {
+  &.large-logo {
+    img {
+      display: none;
+    }
+  }
+}
+
+.home-logo {
+  display: block;
+}
+
+#sponsors {
+  li {
+    display: inline-block;
+
+    img {
+      height: 30px;
+    }
+  }
+}
+
+#main-menu {
+  .sub-menu {
+    display: block;
+  }
+
+  li {
+    margin: 0.3em 0;
+    display: block;
+  }
+}
+
+#site-footer {
+  p {
+    font-size: 16px;
+    top: 25%;
+  }
+}

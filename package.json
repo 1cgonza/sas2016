@@ -1,0 +1,27 @@
+{
+  "name": "sas2016",
+  "version": "1.0.0",
+  "description": "Website for the conference: The Cosmos of Animartion - SAS 2016",
+  "main": "app.js",
+  "keywords": [
+    "Conference",
+    "ADM",
+    "NTU",
+    "SAS",
+    "Animation"
+  ],
+  "author": "Juan Camilo Gonzalez <info@juancgonzalez.com> (http://juancgonzalez.com)",
+  "dependencies": {
+    "browser-sync": "^2.8.2",
+    "circular-json": "^0.1.6",
+    "handlebars": "^3.0.3",
+    "metalsmith": "^2.0.1",
+    "metalsmith-autoprefixer": "^1.1.0",
+    "metalsmith-html-minifier": "^1.1.0",
+    "metalsmith-ignore": "^0.1.2",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-permalinks": "^0.4.0",
+    "metalsmith-sass": "^1.3.0",
+    "metalsmith-templates": "^0.7.0"
+  }
+}
