@@ -1,3 +1,4 @@
+require("harmonize")();
 var Metalsmith   = require('metalsmith');
 var Handlebars   = require('handlebars');
 var ignore       = require('metalsmith-ignore');
