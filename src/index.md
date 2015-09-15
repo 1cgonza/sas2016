@@ -1,4 +1,4 @@
 ---
-template: home.hbs
+layout: home.hbs
 largeLogo: true
 ---
