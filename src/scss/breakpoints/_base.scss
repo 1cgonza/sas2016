@@ -20,7 +20,6 @@ ul {
 ol {
   padding-left: 1.4em;
 }
-/*-----  End of GENERAL  ------*/
 
 h1, h2, h3 {
   font-family: $title-font;
@@ -36,11 +35,16 @@ h2 {
   font-size: 1.6em;
 }
 
+h4 {
+  margin-bottom: 0.3em;
+}
+
 .highlight {
   font-weight: bold;
   border-bottom: 1px dotted;
   // color: $dark-red;
 }
+/*-----  End of GENERAL  ------*/
 
 /*==============================
 =            LAYOUT            =
@@ -56,16 +60,10 @@ html {
 
 main {
   margin-bottom: 4em;
-
-  section {
-    padding: 0 1em;
-  }
+  padding: 0 1em;
 
   .inner-section {
     padding-right: 1em;
-  }
-
-  .section-title {
   }
 
   ul li {

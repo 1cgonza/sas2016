@@ -1,4 +1,5 @@
 @mixin grid-col {
+  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: top;
 }
