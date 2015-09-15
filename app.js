@@ -6,7 +6,7 @@ var sass         = require('metalsmith-sass');
 var autoprefixer = require('metalsmith-autoprefixer');
 var markdown     = require('metalsmith-markdown');
 var permalinks   = require('metalsmith-permalinks');
-var templates    = require('metalsmith-templates');
+var templates    = require('metalsmith-layouts');
 var htmlMin      = require('metalsmith-html-minifier');
 var circularJSON = require('circular-json');
 var browserSync  = require('browser-sync');
@@ -48,7 +48,7 @@ function build(callback) {
     outputDir: 'css/'
   }) );
 
-  // metalsmith.use( autoprefixer() );
+  metalsmith.use( autoprefixer() );
 
   metalsmith.use( permalinks({
     pattern: ':title',
