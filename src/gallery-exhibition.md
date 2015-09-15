@@ -1,3 +1,3 @@
 ---
-template: page.hbs
+layout: page.hbs
 ---
