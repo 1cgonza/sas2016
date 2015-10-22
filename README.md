@@ -1,3 +1,4 @@
+![](http://sas2016.adm.ntu.edu.sg/img/logo-COA.svg)
 # SAS2016 :: The Cosmos of Animation ::
 Website for the 28th Annual Conference of the Society for Animation Studies http://sas2016.adm.ntu.edu.sg/
 
