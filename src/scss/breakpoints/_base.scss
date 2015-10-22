@@ -9,7 +9,6 @@ body {
   margin: 0 auto;
   // background-color: #3B8DB0;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyIiBoZWlnaHQ9IjIiPjxwYXRoIGQ9Ik0tMiAxMEwxMCAtMlpNMTAgNkw2IDEwWk0tMiAyTDIgLTIiIHN0cm9rZT0iI2Y1ZjVmNSIgc3Ryb2tlLXdpZHRoPSIxLjUiPjwvcGF0aD4KPC9zdmc+"),url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgyPSIxIiB5Mj0iMSI+CjxzdG9wIHN0b3AtY29sb3I9IiNmZmZmZmYiPjwvc3RvcD4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYzlkZmU4Ij48L3N0b3A+CjwvbGluZWFyR3JhZGllbnQ+CjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiPjwvcmVjdD4KPC9zdmc+");
-
 }
 
 ul {
@@ -28,11 +27,15 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 2.4em;
+  font-size: 1.8em;
 }
 
 h2 {
-  font-size: 1.6em;
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1.1em;
 }
 
 h4 {
@@ -42,7 +45,44 @@ h4 {
 .highlight {
   font-weight: bold;
   border-bottom: 1px dotted;
-  // color: $dark-red;
+
+  &.highlight-red {
+    color: $dark-red;
+  }
+}
+
+.highlight-box-soft-w {
+  padding: 0.5em;
+  background-color: rgba(255,255,255,0.3);
+}
+
+.highlight-white-dotted-box {
+  padding: 0.5em;
+  border: 2px dotted white;
+}
+
+.timeline-list {
+  li {
+    padding: 0.7em 1em;
+    border-left: 1px solid rgba(59, 141, 176, 1);
+    position: relative;
+
+    &:before {
+      content: '';
+      width: 0.8em;
+      height: 0.8em;
+      border-radius: 50%;
+      border: 1px solid #ce3e38;
+      background-color: #F5F5F5;
+      position: absolute;
+      left: 0.4em;
+      top: 0.5em;
+    }
+  }
+}
+
+.zoom-font {
+  font-size: 115%;
 }
 /*-----  End of GENERAL  ------*/
 
@@ -71,8 +111,8 @@ main {
 
     &::before {
       content: '';
-      width: .3em;
-      height: .3em;
+      width: 5px;
+      height: 5px;
       margin: 0.5em 0 0 -0.8em;
       background-color: $title-color;
       position: absolute;
@@ -103,10 +143,25 @@ main {
   text-align: center;
 }
 
-.zoom-font {
-  font-size: 115%;
-}
+table {
+  border-collapse: separate;
+  border-spacing: 2px;
 
+  td, th {
+    padding: 1em;
+    // border: 1px dotted;
+  }
+  th {
+    background-color: rgba(255,255,255,0.5);
+  }
+  td {
+    background-color: rgba(255,255,255,0.2);
+  }
+  .inner-td {
+    display: inline-block;
+    padding: 1em;
+  }
+}
 
 /*-----  End of LAYOUT  ------*/
 
@@ -233,8 +288,28 @@ a {
     width: 40%;
   }
 }
+
+#updates {
+  .news-date {
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+}
+
 /*-----  End of HOME  ------*/
 
+/*============================
+=            NEWS            =
+============================*/
+.news-title-time {
+  font-size: 1.2em;
+  border-bottom: 1px dotted;
+  width: 50%;
+  display: block;
+  padding: 0.5em 0;
+}
+
+/*=====  End of NEWS  ======*/
 
 
 /*===================================
