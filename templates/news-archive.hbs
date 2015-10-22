@@ -1,0 +1,21 @@
+{{> head}}
+<main class="m-all t-all small-2of3 medium-3of4 large-4of5">
+  {{#if updates}}
+  <section id="updates">
+    <section id="news-intro" class="zoom-font">
+      {{{ contents }}}
+    </section>
+
+    <h2>Updates</h2>
+    <ul class="timeline-list">
+      {{#each collections.updates}}{{#unless archive}}
+        <li class="news-item">
+          <span class="news-date">{{ setDate date }}: </span>
+          <a href="{{ setURL slug }}">{{ title }}</a>
+        </li>
+      {{/unless}}{{/each}}
+    </ul>
+  </section>
+  {{/if}}
+</main>
+{{> footer }}
