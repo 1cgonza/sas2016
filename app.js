@@ -1,13 +1,16 @@
-require('harmonize')();
 var Metalsmith   = require('metalsmith');
 var Handlebars   = require('handlebars');
 var ignore       = require('metalsmith-ignore');
+var collections  = require('metalsmith-collections');
 var sass         = require('metalsmith-sass');
+var each         = require('metalsmith-each');
 var autoprefixer = require('metalsmith-autoprefixer');
 var markdown     = require('metalsmith-markdown');
 var permalinks   = require('metalsmith-permalinks');
 var templates    = require('metalsmith-layouts');
 var htmlMin      = require('metalsmith-html-minifier');
+var slug         = require('slug');
+var moment       = require('moment');
 var circularJSON = require('circular-json');
 var browserSync  = require('browser-sync');
 var metadata     = require('./config')(process.argv);
@@ -39,8 +42,28 @@ function build(callback) {
 
   metalsmith.use( ignore(['**/.DS_Store']) );
 
+  metalsmith.use( collections({
+    updates: {
+      pattern: 'updates/**/*.md',
+      sortBy: 'date',
+      reverse: true
+    },
+    keynotes: {
+      pattern: 'keynotes/**/*.md',
+      sortBy: 'date',
+      reverse: true
+    }
+  }) );
+
   metalsmith.use( markdown({
     smartypants: true
+  }) );
+
+  metalsmith.use( each(function (file, filename) {
+    var safeSlug = file.title ? slug(file.title, {lower: true}) : null;
+    if (safeSlug !== null) {
+      file.slug = safeSlug;
+    }
   }) );
 
   metalsmith.use( sass({
@@ -92,23 +115,23 @@ Handlebars.registerHelper({
   },
   slug: function (title) {
     var slug = title ? title.replace(/\W+/g, '-').toLowerCase() : '';
-
     return new Handlebars.SafeString(slug);
   },
   pageDescription: function (description) {
     var pageDescription = description ? description : metadata.siteDescription;
-
     return new Handlebars.SafeString(pageDescription);
   },
   featuredImg: function (image) {
     var featuredImg = image ? image : metadata.defaultImage;
-
     return new Handlebars.SafeString(featuredImg);
   },
   getThumb: function (thumb) {
     var pageThumb = thumb ? thumb : metadata.defaultThumb;
-
     return new Handlebars.SafeString(pageThumb);
+  },
+  setDate: function (date) {
+    var d = moment(date).format('MMM D, YYYY');
+    return new Handlebars.SafeString(d);
   },
   setURL: setURL
 });
