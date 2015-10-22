@@ -1,5 +1,5 @@
-<div style="text-align:center"><img src="http://sas2016.adm.ntu.edu.sg/img/logo-COA.svg"></div>
-# SAS2016 :: The Cosmos of Animation ::
+<p align="center"><img src="http://sas2016.adm.ntu.edu.sg/img/logo-COA.svg"></p>
+<h1 align="center">SAS2016 :: The Cosmos of Animation ::</h1>
 Website for the 28th Annual Conference of the Society for Animation Studies http://sas2016.adm.ntu.edu.sg/
 
 Built with [Metalsmith](http://www.metalsmith.io/)
