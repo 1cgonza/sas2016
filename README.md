@@ -1,6 +1,6 @@
-<p align="center"><img src="http://sas2016.adm.ntu.edu.sg/img/logo-COA.svg"></p>
+<p align="center"><a href="http://sas2016.adm.ntu.edu.sg/" target="_blank"><img src="http://sas2016.adm.ntu.edu.sg/img/logo-COA.svg"></a></p>
 <h1 align="center">SAS2016 :: The Cosmos of Animation ::</h1>
-Website for the 28th Annual Conference of the Society for Animation Studies http://sas2016.adm.ntu.edu.sg/
+Website for the 28th Annual Conference of the Society for Animation Studies <a href="http://sas2016.adm.ntu.edu.sg/" target="_blank">sas2016.adm.ntu.edu.sg</a>
 
 Built with [Metalsmith](http://www.metalsmith.io/)
 
