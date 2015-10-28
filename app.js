@@ -20,7 +20,7 @@ var fs           = require('fs');
 if (metadata.isDev) {
   build(watch);
 } else {
-  console.log('ready');
+  build(prodBuildReady);
 }
 
 function watch () {
@@ -38,6 +38,10 @@ function watch () {
     // logLevel: 'debug',
     notify: false
   });
+}
+
+function prodBuildReady () {
+  console.log( chalk.yellow('..:: Production build ready ::..') );
 }
 
 function build(callback) {
