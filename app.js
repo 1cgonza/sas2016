@@ -13,27 +13,32 @@ var slug         = require('slug');
 var moment       = require('moment');
 var circularJSON = require('circular-json');
 var browserSync  = require('browser-sync');
+var chalk        = require('chalk');
 var metadata     = require('./config')(process.argv);
 var fs           = require('fs');
 
 if (metadata.isDev) {
-  browserSync({
-    server: 'build',
-    files: ['src/**/*.md', 'src/scss/**/*.scss', 'src/**/*.js', 'templates/**/*.hbs', 'templates/**/*.html'],
-    // logLevel: 'debug',
-    notify: false,
-    middleware: function (req, res, next) {
-      build(next);
-    }
-  });
+  build(watch);
 } else {
-  build(deploy);
-}
-
-function deploy() {
   console.log('ready');
 }
 
+function watch () {
+  browserSync({
+    server: 'build',
+    files: [{
+      match: ['src/**/*.md', 'src/scss/**/*.scss', 'src/**/*.js', 'templates/**/*.hbs', 'templates/**/*.html'],
+      fn: function (event, file) {
+        if (event === 'change') {
+          build(this.reload);
+          console.log( chalk.cyan('Updated file: ') + chalk.yellow(file) );
+        }
+      }
+    }],
+    // logLevel: 'debug',
+    notify: false
+  });
+}
 
 function build(callback) {
   var metalsmith = new Metalsmith(__dirname);
