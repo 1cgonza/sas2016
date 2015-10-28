@@ -17,6 +17,7 @@
   "author": "Juan Camilo Gonzalez <info@juancgonzalez.com> (http://juancgonzalez.com)",
   "dependencies": {
     "browser-sync": "^2.9.3",
+    "chalk": "^1.1.1",
     "circular-json": "^0.2.0",
     "handlebars": "^4.0.2",
     "metalsmith": "^2.0.1",
