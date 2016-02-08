@@ -1,14 +1,23 @@
 /*===============================
 =            GENERAL            =
 ===============================*/
+html  {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyIiBoZWlnaHQ9IjIiPjxwYXRoIGQ9Ik0tMiAxMEwxMCAtMlpNMTAgNkw2IDEwWk0tMiAyTDIgLTIiIHN0cm9rZT0iI2Y1ZjVmNSIgc3Ryb2tlLXdpZHRoPSIxLjUiPjwvcGF0aD4KPC9zdmc+"),url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgyPSIxIiB5Mj0iMSI+CjxzdG9wIHN0b3AtY29sb3I9IiNmZmZmZmYiPjwvc3RvcD4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYzlkZmU4Ij48L3N0b3A+CjwvbGluZWFyR3JhZGllbnQ+CjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiPjwvcmVjdD4KPC9zdmc+");
+}
+
 body {
   font-family: $sans-serif;
   font-size: 100%;
   line-height: 1.4;
   max-width: 1500px;
   margin: 0 auto;
-  // background-color: #3B8DB0;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyIiBoZWlnaHQ9IjIiPjxwYXRoIGQ9Ik0tMiAxMEwxMCAtMlpNMTAgNkw2IDEwWk0tMiAyTDIgLTIiIHN0cm9rZT0iI2Y1ZjVmNSIgc3Ryb2tlLXdpZHRoPSIxLjUiPjwvcGF0aD4KPC9zdmc+"),url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgyPSIxIiB5Mj0iMSI+CjxzdG9wIHN0b3AtY29sb3I9IiNmZmZmZmYiPjwvc3RvcD4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYzlkZmU4Ij48L3N0b3A+CjwvbGluZWFyR3JhZGllbnQ+CjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiPjwvcmVjdD4KPC9zdmc+");
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 ul {
@@ -98,7 +107,7 @@ html {
   box-sizing: inherit;
 }
 
-main {
+article {
   margin-bottom: 4em;
   padding: 0 1em;
 
@@ -162,7 +171,6 @@ table {
     padding: 1em;
   }
 }
-
 /*-----  End of LAYOUT  ------*/
 
 /*=============================
@@ -274,7 +282,6 @@ a {
     }
   }
 }
-
 /*-----  End of SITE HEADER  ------*/
 
 /*============================
@@ -295,7 +302,6 @@ a {
     font-weight: bold;
   }
 }
-
 /*-----  End of HOME  ------*/
 
 /*============================
@@ -308,9 +314,7 @@ a {
   display: block;
   padding: 0.5em 0;
 }
-
 /*=====  End of NEWS  ======*/
-
 
 /*===================================
 =            SITE FOOTER            =
@@ -318,6 +322,9 @@ a {
 #site-footer {
   font-size: 0;
   position: relative;
+  background-image: url('../img/bg-footer.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 
   img {
     width: 100%;
@@ -325,11 +332,9 @@ a {
   }
 
   p {
-    position: absolute;
-    width: 100%;
-    padding: 0 3em;
+    width: 80%;
+    margin: 1.3em auto;
     font-size: 12px;
-    top: 5%;
     text-align: center;
     color: white;
   }

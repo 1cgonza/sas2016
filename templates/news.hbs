@@ -1,7 +1,11 @@
 {{> head}}
-<main class="m-all t-all small-2of3 medium-3of4 large-4of5">
-  <time class="news-title-time" datetime="{{ date }}">{{ setDate date }}</time>
-  <h1>{{ title }}</h1>
-  {{{ contents }}}
-</main>
+<article class="m-all t-all small-2of3 medium-3of4 large-4of5">
+  <header>
+    <time class="news-title-time" datetime="{{ date }}">{{ setDate date }}</time>
+    <h1>{{ title }}</h1>
+  </header>
+  <section>
+    {{{ contents }}}
+  </section>
+</article>
 {{> footer }}

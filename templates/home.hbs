@@ -1,12 +1,12 @@
 {{> head}}
 
-<main class="m-all t-all small-2of3 medium-3of4 large-4of5">
-  <section id="welcome" class="zoom-font">
+<article class="m-all t-all small-2of3 medium-3of4 large-4of5">
+  <header id="welcome" class="zoom-font">
     <div class="home-logo">
       <img src="{{ setURL 'img/logo-COA.svg' }}" alt="The Cosmos of Animation">
     </div>
     {{{ contents }}}
-  </section>
+  </header>
 
   <p class="align-center"><a class="big-btn" href="{{setURL 'call-for-proposals' }}">Call for Proposals</a></p>
 
@@ -23,7 +23,6 @@
     </ul>
   </section>
   {{/if}}
-
-</main>
+</article>
 
 {{> footer }}
