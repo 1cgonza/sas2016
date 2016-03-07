@@ -8,3 +8,5 @@ The 2016 conference will include presentations, roundtable discussion, discussio
 
 <span class="highlight highlight-red">Questions?</span> please feel free to contact us at: <a class="highlight-white-dotted-box" href="mailto:sas2016@ntu.edu.sg?subject=Question">sas2016@ntu.edu.sg</a>
 
+<p class="align-center"><a class="big-btn" href="http://www.atenga.sg/Registration.php?id=45" target="_blank">Register for the conference</a></p>
+
