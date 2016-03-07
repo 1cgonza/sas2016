@@ -1,0 +1,37 @@
+{{> head}}
+<article>
+  {{#if events}}
+  <section id="events-archive">
+    <section id="events-intro" class="zoom-font">
+      <h1>{{ title }}</h1>
+      {{{ contents }}}
+    </section>
+
+    <ul class="timeline-list">
+    {{#each collections.events}}{{#unless archive}}
+      <li>
+        <h2 class="event-date">{{ setDate date 'dddd, MMMM Do, h:mm A' }}</h2>
+        <h3 class="event-title"><a href="{{ setURL slug true }}">{{title}}</a></h3>
+
+        <div class="event-info">
+          <div class="event-description m-all t-all small-1of2 medium-1of2 large-1of2">
+            <div class="event-info-ele"><span class="meta-title">Price:</span> {{price}} {{#if priceInfo}} | <span class="meta">{{priceInfo}}</span>{{/if}}</div>
+
+            <div class="event-info-ele"><span class="meta-title">Location:</span> {{location}}</div>
+            <div class="event-info-ele summary">{{summary}}</div>
+            <div class="event-info-ele highlight-box-soft-w"> <a href="{{ setURL slug true }}">See full event description</a></div>
+          </div>
+
+          <figure class="event-img m-all t-all small-1of2 medium-1of2 large-1of2">
+            <a href="{{ setURL slug true }}">{{ featuredImg thumb true }}</a>
+            {{#if thumbCaption}}<figcaption>{{ thumbCaption }}</figcaption>{{/if}}
+          </figure>
+        </div>
+      </li>
+    {{/unless}}{{/each}}
+    </ul>
+
+  </section>
+  {{/if}}
+</article>
+{{> footer }}

@@ -1,0 +1,15 @@
+{{> head}}
+<article id="event-page">
+  <header>
+    <h1>{{ title }}</h1>
+    <div class="event-info">
+      <div class="event-info-ele"><span class="meta-title">Date:</span> <time datetime="{{ date }}">{{ setDate date 'dddd, MMMM Do, h:mm A' }}</time></div>
+      <div class="event-info-ele"><span class="meta-title">Price:</span> {{price}} {{#if priceInfo}} | <span class="meta">{{priceInfo}}</span>{{/if}}</div>
+      <div class="event-info-ele"><span class="meta-title">Location:</span> {{location}}</div>
+    </div>
+  </header>
+  <section>
+    {{{ contents }}}
+  </section>
+</article>
+{{> footer }}
