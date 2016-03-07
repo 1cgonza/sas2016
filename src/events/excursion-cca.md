@@ -9,7 +9,7 @@ thumb: 'SEA-STATE-3_Inversion-500x300.jpg'
 thumbCaption: 'Charles Lim - SEA STATE 3: inversion (production render, detail), 2015.'
 summary: 'A trip to visit ADM’s sister institution CCA - about 20 minutes from NTU/ADM main campus and located within the artistically vibrant neighborhood of Gillman Barracks. An opportunity to explore the exhibition "SEA STATE" by local artist Charles Lim.'
 price: S$35 (US$25 / 23 Euro)
-priceInfo: Includes transportation and a catered reception (dinner)closing
+priceInfo: Includes transportation and a catered reception (dinner)
 layout: events.hbs
 ---
 A trip to visit ADM’s sister institution CCA - about 20 minutes from
