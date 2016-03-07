@@ -1,14 +1,12 @@
 {{> head}}
 
-<article class="m-all t-all small-2of3 medium-3of4 large-4of5">
+<article>
   <header id="welcome" class="zoom-font">
     <div class="home-logo">
-      <img src="{{ setURL 'img/logo-COA.svg' }}" alt="The Cosmos of Animation">
+      <img src="{{ setURL 'img/logo-COA.svg' }}" width="171" height="159" alt="The Cosmos of Animation">
     </div>
     {{{ contents }}}
   </header>
-
-  <p class="align-center"><a class="big-btn" href="{{setURL 'call-for-proposals' }}">Call for Proposals</a></p>
 
   {{#if updates}}
   <section id="updates">
@@ -16,13 +14,21 @@
     <ul class="timeline-list">
       {{#each collections.updates}}{{#unless archive}}
         <li class="news-item">
-          <span class="news-date">{{ setDate date }}: </span>
-          <a href="{{ setURL slug }}">{{ title }}</a>
+          <span class="news-date">{{ setDate date 'MMM D, YYYY' }}: </span>
+          <a href="{{ setURL slug true }}">{{ title }}</a>
         </li>
       {{/unless}}{{/each}}
     </ul>
   </section>
   {{/if}}
+
+  <section id="sponsors">
+    <h2>With the friendly support of</h2>
+    <ul>
+      <li><a title="Goethe-Institut Singapore" href="https://www.goethe.de/ins/sg/en/index.html" target="_blank"><img src="/img/Goethe-institut_logo.png" width="62" height="100" alt="Goethe-Institut Singapore"></li>
+      <li><a title="Mandarin Orchard Singapore" href="http://www.meritushotels.com/mandarin-orchard-singapore/" target="_blank"><img src="/img/Mandarin-Orchard_logo.png" width="116" height="100" alt="Mandarin Orchard Singapore"></li>
+    </ul>
+  </section>
 </article>
 
 {{> footer }}
