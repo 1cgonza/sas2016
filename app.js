@@ -10,7 +10,7 @@ var permalinks   = require('metalsmith-permalinks');
 var templates    = require('metalsmith-layouts');
 var htmlMin      = require('metalsmith-html-minifier');
 var slug         = require('slug');
-var moment       = require('moment');
+var moment       = require('moment-timezone');
 var circularJSON = require('circular-json');
 var browserSync  = require('browser-sync');
 var chalk        = require('chalk');
@@ -23,15 +23,15 @@ if (metadata.isDev) {
   build(prodBuildReady);
 }
 
-function watch () {
+function watch() {
   browserSync({
     server: 'build',
     files: [{
       match: ['src/**/*.md', 'src/scss/**/*.scss', 'src/**/*.js', 'templates/**/*.hbs', 'templates/**/*.html'],
-      fn: function (event, file) {
+      fn: function(event, file) {
         if (event === 'change') {
           build(this.reload);
-          console.log( chalk.cyan('Updated file: ') + chalk.yellow(file) );
+          console.log(chalk.cyan('Updated file: ') + chalk.yellow(file));
         }
       }
     }],
@@ -40,8 +40,8 @@ function watch () {
   });
 }
 
-function prodBuildReady () {
-  console.log( chalk.yellow('..:: Production build ready ::..') );
+function prodBuildReady() {
+  console.log(chalk.yellow('..:: Production build ready ::..'));
 }
 
 function build(callback) {
@@ -49,9 +49,9 @@ function build(callback) {
 
   metalsmith.metadata(metadata);
 
-  metalsmith.use( ignore(['**/.DS_Store']) );
+  metalsmith.use(ignore(['**/.DS_Store']));
 
-  metalsmith.use( collections({
+  metalsmith.use(collections({
     updates: {
       pattern: 'updates/**/*.md',
       sortBy: 'date',
@@ -61,45 +61,51 @@ function build(callback) {
       pattern: 'keynotes/**/*.md',
       sortBy: 'date',
       reverse: true
+    },
+    events: {
+      pattern: 'events/**/*.md',
+      sortBy: 'date'
     }
-  }) );
+  }));
 
-  metalsmith.use( markdown({
+  metalsmith.use(markdown({
     smartypants: true
-  }) );
+  }));
 
-  metalsmith.use( each(function (file, filename) {
+  metalsmith.use(each(function(file, filename) {
     var safeSlug = file.title ? slug(file.title, {lower: true}) : null;
     if (safeSlug !== null) {
       file.slug = safeSlug;
     }
-  }) );
+  }));
 
-  metalsmith.use( sass({
+  metalsmith.use(sass({
+    sourceMap: true,
+    sourceMapContents: true,
     outputStyle: 'compressed',
     outputDir: 'css/'
-  }) );
+  }));
 
-  metalsmith.use( autoprefixer() );
+  metalsmith.use(autoprefixer());
 
-  metalsmith.use( permalinks({
+  metalsmith.use(permalinks({
     pattern: ':title',
     relative: false
-  }) );
+  }));
 
-  metalsmith.use( templates({
+  metalsmith.use(templates({
     engine: 'handlebars',
     directory: 'templates'
-  }) );
+  }));
 
-  metalsmith.use( htmlMin() );
+  metalsmith.use(htmlMin());
 
-  metalsmith.build( function(err) {
+  metalsmith.build(function(err) {
     if (err) {
       throw err;
     }
     callback();
-  } );
+  });
 }
 
 Handlebars.registerPartial({
@@ -108,12 +114,13 @@ Handlebars.registerPartial({
 });
 
 Handlebars.registerHelper({
-  debug: function (context) {
+  debug: function(context) {
     return new Handlebars.SafeString(
       '<div class="debug">' + circularJSON.stringify(context) + '</div>'
     );
   },
-  pageTitle: function (title) {
+
+  pageTitle: function(title) {
     var pageTitle = metadata.siteTitle;
 
     if (title) {
@@ -122,29 +129,41 @@ Handlebars.registerHelper({
 
     return new Handlebars.SafeString(pageTitle);
   },
-  slug: function (title) {
+
+  slug: function(title) {
     var slug = title ? title.replace(/\W+/g, '-').toLowerCase() : '';
     return new Handlebars.SafeString(slug);
   },
-  pageDescription: function (description) {
+
+  pageDescription: function(description) {
     var pageDescription = description ? description : metadata.siteDescription;
     return new Handlebars.SafeString(pageDescription);
   },
-  featuredImg: function (image) {
-    var featuredImg = image ? image : metadata.defaultImage;
+
+  featuredImg: function(image, asImageTag, width, height) {
+    var featuredImg = '';
+    var src = image ? setURL('img/' + image, false) : metadata.defaultImage;
+    var w = typeof width === 'number' ? width : '500';
+    var h = typeof height === 'number' ? height : '300';
+
+    if (typeof asImageTag === 'boolean' && asImageTag) {
+      featuredImg = '<img src="' + src + '" width="' + w + '" height="' + h + '">';
+    } else {
+      featuredImg = src;
+    }
+
     return new Handlebars.SafeString(featuredImg);
   },
-  getThumb: function (thumb) {
-    var pageThumb = thumb ? thumb : metadata.defaultThumb;
-    return new Handlebars.SafeString(pageThumb);
-  },
-  setDate: function (date) {
-    var d = moment(date).format('MMM D, YYYY');
+
+  setDate: function(date, formatString) {
+    var d = moment(date).tz('Asia/Singapore').format(formatString);
     return new Handlebars.SafeString(d);
   },
   setURL: setURL
 });
 
-function setURL (path) {
-  return metadata.baseUrl + path;
+function setURL(url, withTail) {
+  var URL = !url ? metadata.baseUrl : metadata.baseUrl + '/' + url;
+  var tail = typeof withTail === 'boolean' && withTail && url ? '/' : '';
+  return URL + tail;
 }
