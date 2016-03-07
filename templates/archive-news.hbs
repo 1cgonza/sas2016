@@ -1,5 +1,5 @@
 {{> head}}
-<article class="m-all t-all small-2of3 medium-3of4 large-4of5">
+<article>
   {{#if updates}}
   <section id="updates">
     <section id="news-intro" class="zoom-font">
@@ -10,8 +10,8 @@
     <ul class="timeline-list">
       {{#each collections.updates}}{{#unless archive}}
         <li class="news-item">
-          <span class="news-date">{{ setDate date }}: </span>
-          <a href="{{ setURL slug }}">{{ title }}</a>
+          <span class="news-date">{{ setDate date 'MMM D, YYYY' }}: </span>
+          <a href="{{ setURL slug true }}">{{ title }}</a>
         </li>
       {{/unless}}{{/each}}
     </ul>
