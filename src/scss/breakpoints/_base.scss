@@ -1,23 +1,17 @@
 /*===============================
 =            GENERAL            =
 ===============================*/
-html  {
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyIiBoZWlnaHQ9IjIiPjxwYXRoIGQ9Ik0tMiAxMEwxMCAtMlpNMTAgNkw2IDEwWk0tMiAyTDIgLTIiIHN0cm9rZT0iI2Y1ZjVmNSIgc3Ryb2tlLXdpZHRoPSIxLjUiPjwvcGF0aD4KPC9zdmc+"),url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgyPSIxIiB5Mj0iMSI+CjxzdG9wIHN0b3AtY29sb3I9IiNmZmZmZmYiPjwvc3RvcD4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYzlkZmU4Ij48L3N0b3A+CjwvbGluZWFyR3JhZGllbnQ+CjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiPjwvcmVjdD4KPC9zdmc+");
-}
-
 body {
   font-family: $sans-serif;
   font-size: 100%;
-  line-height: 1.4;
+  line-height: 1.6;
   max-width: 1500px;
   margin: 0 auto;
-  display: flex;
+  padding-bottom: 6rem;
   min-height: 100vh;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;
+  position: relative;
+  color: $text-color;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyIiBoZWlnaHQ9IjIiPjxwYXRoIGQ9Ik0tMiAxMEwxMCAtMlpNMTAgNkw2IDEwWk0tMiAyTDIgLTIiIHN0cm9rZT0iI2Y1ZjVmNSIgc3Ryb2tlLXdpZHRoPSIxLjUiPjwvcGF0aD4KPC9zdmc+"),url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgo8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgyPSIxIiB5Mj0iMSI+CjxzdG9wIHN0b3AtY29sb3I9IiNmZmZmZmYiPjwvc3RvcD4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYzlkZmU4Ij48L3N0b3A+CjwvbGluZWFyR3JhZGllbnQ+CjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiPjwvcmVjdD4KPC9zdmc+");
 }
 
 ul {
@@ -60,6 +54,19 @@ h4 {
   }
 }
 
+figure {
+  margin: 0;
+}
+
+figcaption {
+  margin: 0;
+  padding: 0 0.5em;
+  text-align: center;
+  font-size: 0.85em;
+  font-style: italic;
+  color: $mid-gray;
+}
+
 .highlight-box-soft-w {
   padding: 0.5em;
   background-color: rgba(255,255,255,0.3);
@@ -81,7 +88,7 @@ h4 {
       width: 0.8em;
       height: 0.8em;
       border-radius: 50%;
-      border: 1px solid #ce3e38;
+      border: 1px solid $dark-red;
       background-color: #F5F5F5;
       position: absolute;
       left: 0.4em;
@@ -92,6 +99,17 @@ h4 {
 
 .zoom-font {
   font-size: 115%;
+}
+
+span.meta-title {
+  font-size: 0.85em;
+  color: $light-red;
+}
+
+.meta {
+  font-size: 0.85em;
+  font-style: italic;
+  color: $mid-gray;
 }
 /*-----  End of GENERAL  ------*/
 
@@ -150,6 +168,7 @@ article {
 
 .align-center {
   text-align: center;
+  display: block;
 }
 
 table {
@@ -171,6 +190,10 @@ table {
     padding: 1em;
   }
 }
+
+.map-iframe {
+  width: 100%;
+}
 /*-----  End of LAYOUT  ------*/
 
 /*=============================
@@ -191,7 +214,8 @@ a {
 
 .big-btn {
   text-align: center;
-  padding: 0.3em 1.6em 1em;
+  padding: 0.8em 2em 2em 2em;
+  // padding: 0.3em 1.6em 1em;
   background-image: url(../img/pegbar.svg);
   color: white;
   font-size: 1.2em;
@@ -215,7 +239,7 @@ a {
 
 #conference-date,
 #header-logo,
-#sponsors {
+#header-logos {
   vertical-align: middle;
 }
 
@@ -246,7 +270,7 @@ a {
   display: none;
 }
 
-#sponsors {
+#header-logos {
   text-align: right;
   margin: 0;
 
@@ -256,6 +280,7 @@ a {
 
     img {
       height: 25px;
+      width: auto;
     }
   }
 }
@@ -293,6 +318,7 @@ a {
 
   img {
     width: 40%;
+    height: auto;
   }
 }
 
@@ -300,6 +326,32 @@ a {
   .news-date {
     font-size: 0.8em;
     font-weight: bold;
+  }
+}
+
+#sponsors {
+  text-align: center;
+  margin-top: 4em;
+
+  h2 {
+    color: lighten($text-color, 20%);
+  }
+
+  ul {
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      img {
+        width: auto;
+        height: 100px;
+      }
+
+      &::before {
+        width: 0;
+        margin: 0;
+        padding: 0;
+      }
+    }
   }
 }
 /*-----  End of HOME  ------*/
@@ -316,12 +368,62 @@ a {
 }
 /*=====  End of NEWS  ======*/
 
+/*==============================
+=            EVENTS            =
+==============================*/
+#events-archive {
+  .event-description {
+    padding-right: 2em;
+  }
+
+  .event-date {
+    font-size: 1.6em;
+    margin: -0.4em 0 0;
+    color: $text-color;
+  }
+
+  .event-title {
+    margin-top: 0;
+  }
+
+  .event-img {
+    img {
+      width: 100%;
+      height: auto;
+      line-height: 0;
+    }
+  }
+
+  .event-info-ele {
+    margin-bottom: 0.5em;
+  }
+}
+
+#event-page {
+  .event-image {
+    max-width: 100%;
+    text-align: center;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+
+/*=====  End of EVENTS  ======*/
+
+
 /*===================================
 =            SITE FOOTER            =
 ===================================*/
 #site-footer {
   font-size: 0;
-  position: relative;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
   background-image: url('../img/bg-footer.svg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -333,7 +435,8 @@ a {
 
   p {
     width: 80%;
-    margin: 1.3em auto;
+    padding: 1em 0;
+    margin: 0 auto;
     font-size: 12px;
     text-align: center;
     color: white;
