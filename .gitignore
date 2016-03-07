@@ -5,4 +5,5 @@ logs
 node_modules
 
 .DS_Store
-_FILES/
+_FILES
+build
