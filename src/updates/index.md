@@ -1,5 +1,5 @@
 ---
-layout: news-archive.hbs
+layout: archive-news.hbs
 archive: true
 ---
 Welcome to the SAS 2016 **"The Cosmos of Animation"** updates page. Here we will be posting important news and useful information for all of you interested in joining us in Singapore.
