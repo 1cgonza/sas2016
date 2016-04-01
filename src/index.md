@@ -6,7 +6,7 @@ The Society for Animation Studies has always excelled in bringing together theor
 
 The 2016 conference will include presentations, roundtable discussion, discussions, exclusive exhibitions and special events. Confirmed keynote speakers will be announced soon.
 
-<span class="highlight highlight-red">Questions?</span> please feel free to contact us at: <a class="highlight-white-dotted-box" href="mailto:sas2016@ntu.edu.sg?subject=Question">sas2016@ntu.edu.sg</a>
+<span class="highlight highlight-red">Questions?</span> please feel free to contact us at: <a class="highlight-white-dotted-box" href="mailto:sec_sas2016@ntu.edu.sg?subject=SAS2016">sec_sas2016@ntu.edu.sg</a>
 
 <p class="align-center"><a class="big-btn" href="http://www.atenga.sg/Registration.php?id=45" target="_blank">Register for the conference</a></p>
 
