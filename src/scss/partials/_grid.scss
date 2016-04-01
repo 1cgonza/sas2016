@@ -200,6 +200,11 @@
     width: 25%;
   }
 
+  .large-2of4 {
+    @include grid-col;
+    width: 50%;
+  }
+
   .large-3of4 {
     @include grid-col;
     width: 75%;

@@ -20,15 +20,15 @@
 </head>
 <body>
 <header id="site-header" role="banner">
-  <div id="conference-date" class="m-1of4 t-1of4 small-1of4 medium-1of3 large-1of3">
+  <div id="conference-date" class="m-1of4 t-1of4 small-1of4 medium-1of3 large-1of4">
     <p><time datetime="2016-06-26">June 26</time> - <time datetime="2016-06-30">30, 2016</time></p>
   </div>
 
-  <div id="header-logo" class="m-1of2 t-1of2 small-1of2 medium-1of3 large-1of3 {{#if largeLogo}} large-logo {{/if}}">
+  <div id="header-logo" class="m-1of2 t-1of2 small-1of2 medium-1of3 large-1of4 {{#if largeLogo}} large-logo {{/if}}">
     <a href="{{ baseUrl }}"><img src="{{ setURL 'img/logo-COA.svg' }}" width="171" height="159" alt="SAS2016"></a>
   </div>
 
-  <ul id="header-logos" class="m-1of4 t-1of4 small-1of4 medium-1of3 large-1of3">
+  <ul id="header-logos" class="m-1of4 t-1of4 small-1of4 medium-1of3 large-2of4">
     {{#each logos }}
       <li><a href="{{ this.url }}" title="{{ this.name }}" target="_blank"><img src="{{ setURL this.img }}" width="{{ this.width }}" height="{{ this.height }}" alt="{{ this.name }}"></a></li>
     {{/each}}

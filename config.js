@@ -28,19 +28,26 @@ var defaults = {
       width: 86,
       height: 45
     },
-    adm: {
-      name: 'School of Art, Design & Media',
-      url: 'http://www.adm.ntu.edu.sg/',
-      img: 'img/logo-adm.svg',
-      width: 42,
-      height: 45
-    },
     ntu: {
       name: 'Nanyang Technological University',
       url: 'http://www.ntu.edu.sg/',
       img: 'img/logo-ntu.png',
-      width: 126,
-      height: 46
+      width: 123,
+      height: 45
+    },
+    hss: {
+      name: 'College of Humanities, Arts, and Social Sciences',
+      url: 'http://www.hss.ntu.edu.sg/Pages/Home.aspx',
+      img: 'img/logo-HSS.png',
+      width: 196,
+      height: 45
+    },
+    adm: {
+      name: 'School of Art, Design & Media',
+      url: 'http://www.adm.ntu.edu.sg/',
+      img: 'img/logo-adm.png',
+      width: 139,
+      height: 45
     }
   }
 };
