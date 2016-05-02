@@ -1,6 +1,15 @@
 /*===============================
 =            GENERAL            =
 ===============================*/
+// http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: $sans-serif;
   font-size: 100%;
@@ -116,15 +125,6 @@ span.meta-title {
 /*==============================
 =            LAYOUT            =
 ==============================*/
-// http://www.paulirish.com/2012/box-sizing-border-box-ftw/
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
 article {
   margin-bottom: 4em;
   padding: 0 1em;
@@ -287,6 +287,8 @@ a {
 
 #main-menu {
   font-family: $title-font;
+  font-size: 0.9em;
+
   .sub-menu {
     display: none;
   }
