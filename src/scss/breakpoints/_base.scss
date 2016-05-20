@@ -194,6 +194,39 @@ table {
 .map-iframe {
   width: 100%;
 }
+
+.gallery {
+  margin: 2em 0;
+
+  .gallery-item {
+    display: inline-block;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &.grid-3 {
+    .gallery-item {
+      width: 33.3%;
+    }
+  }
+}
+
+.right {
+  float: right;
+  padding-left: 1.5em;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
 /*-----  End of LAYOUT  ------*/
 
 /*=============================
