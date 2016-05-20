@@ -10,6 +10,7 @@ summary: We bring an exhibition of the work of the late great Ronald Searle to o
 price: FREE FOR ALL
 priceInfo: No extra registration required
 layout: events.hbs
+description: We bring an exhibition of the work of the late great Ronald Searle to our ADM gallery
 ---
 We bring an exhibition of the work of the late great <span class="highlight">Ronald Searle</span> to our ADM gallery, which has been exclusively conceptualized and curated by ADM professors Kathrin Albers and Davide Benvenuti together with our gallery director Michelle Ho for the 2016 SAS conference.
 
