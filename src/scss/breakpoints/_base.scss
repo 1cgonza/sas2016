@@ -76,6 +76,14 @@ figcaption {
   color: $mid-gray;
 }
 
+.italic {
+  font-style: italic;
+}
+
+.small {
+  font-size: 0.8em;
+}
+
 .highlight-box-soft-w {
   padding: 0.5em;
   background-color: rgba(255,255,255,0.3);
@@ -248,10 +256,8 @@ a {
 .big-btn {
   text-align: center;
   padding: 0.8em 2em 2em 2em;
-  // padding: 0.3em 1.6em 1em;
   background-image: url(../img/pegbar.svg);
   color: white;
-  font-size: 1.2em;
   margin: 0.5em 0;
   display: inline-block;
   background-size: 100% auto;
@@ -268,6 +274,7 @@ a {
 ===================================*/
 #site-header {
   width: 100%;
+  overflow: hidden;
 }
 
 #conference-date,
@@ -295,7 +302,7 @@ a {
   img {
     width: 100%;
     height: auto;
-    max-width: 150px;
+    max-height: 80px;
   }
 }
 
@@ -321,6 +328,8 @@ a {
 #main-menu {
   font-family: $title-font;
   font-size: 0.9em;
+  text-align: center;
+  padding: 0 1em;
 
   .sub-menu {
     display: none;
@@ -328,7 +337,7 @@ a {
 
   li {
     margin: 0.3em 0.3em 0.3em 0;
-    padding: .5em 0;
+    padding: .3em 0;
     display: inline-block;
 
     a {
@@ -338,6 +347,14 @@ a {
 
       &:hover {
         background-color: darken($light-red, 8%);
+      }
+
+      &.active {
+        background-color: $dark-blue;
+
+        &:hover {
+          background-color: darken($dark-blue, 8%);
+        }
       }
     }
   }
@@ -448,6 +465,158 @@ a {
 
 
 /*=====  End of EVENTS  ======*/
+
+/*================================
+=            SCHEDULE            =
+================================*/
+#schedule-nav {
+  margin: 1.5em 0 3em;
+  text-align: center;
+  font-size: 0.8em;
+
+  a {
+    padding: 0.5em;
+    border: 1px dotted;
+    display: inline-block;
+    margin: 0.1em 0;
+
+    &.active {
+      color: $light-red;
+      border: 1px solid;
+    }
+  }
+}
+
+.schedule-day {
+  .break {
+    font-size: 0.8em;
+    border-top: 1px dotted;
+    border-bottom: 1px dotted;
+    margin: 3em 0;
+
+    h3, span {
+      display: inline-block;
+      vertical-align: left;
+      padding-right: 1em;
+    }
+  }
+
+}
+.event {
+  $padding-inside: 0 2em 1em;
+
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  margin: 0 1% 2% 0;
+  font-size: 0.9em;
+  padding-bottom: 1em;
+  background-color: rgba(255, 255, 255, 0.2);
+
+  .title, .chair, .presentation, .description {
+    padding: $padding-inside;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .info {
+    transition: 0.25s max-height ease-in-out;
+    max-height: 500px;
+    overflow: hidden;
+
+    &.hidden {
+      max-height: 0;
+    }
+  }
+
+  .title {
+    padding: 0 28px;
+    font-weight: bold;
+    margin-top: 1em;
+    font-size: 1.2em;
+  }
+
+  .chair {
+    font-style: italic;
+    padding-bottom: 1em;
+  }
+
+  .presentation {
+    font-size: 0.9em;
+    margin: 0.3em 0;
+
+    .name {
+      font-weight: bold;
+    }
+  }
+
+  &::before {
+    display: block;
+    letter-spacing: 1.2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 0.5em 2em;
+  }
+
+  &.auditorium {
+    &::before {
+      content: 'AUDITORIUM';
+    }
+  }
+
+  &.lobby {
+    &::before {
+      content: 'LOBBY'
+    }
+  }
+
+  &.gallery {
+    &::before {
+      content: 'GALLERY'
+    }
+  }
+
+  &.lt1 {
+    &::before {
+      content: 'LT1';
+    }
+  }
+
+  &.lt2 {
+    &::before {
+      content: 'LT2';
+    }
+  }
+
+  &.art2-15 {
+    &::before {
+      content: 'ART 2-15';
+    }
+  }
+
+  .type {
+    font-size: 10px;
+    padding: 0.3em;
+    margin: 0 0 1em 1em;
+    border: 1px dotted;
+    float: right;
+  }
+
+  &.keynote {
+    background-color: rgba(244, 212, 101, 0.1);
+    border-color: rgb(244, 212, 101);
+    text-align: center;
+
+    .title {
+      padding: 0 1em 1em;
+      clear: right;
+    }
+  }
+}
+
+/*=====  End of SCHEDULE  ======*/
+
 
 
 /*===================================

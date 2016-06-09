@@ -2,6 +2,7 @@ var Metalsmith   = require('metalsmith');
 var Handlebars   = require('handlebars');
 var ignore       = require('metalsmith-ignore');
 var collections  = require('metalsmith-collections');
+var drafts       = require('metalsmith-drafts');
 var sass         = require('metalsmith-sass');
 var each         = require('metalsmith-each');
 var autoprefixer = require('metalsmith-autoprefixer');
@@ -9,6 +10,7 @@ var markdown     = require('metalsmith-markdown');
 var permalinks   = require('metalsmith-permalinks');
 var templates    = require('metalsmith-layouts');
 var htmlMin      = require('metalsmith-html-minifier');
+var uglify       = require('metalsmith-uglify');
 var slug         = require('slug');
 var moment       = require('moment-timezone');
 var circularJSON = require('circular-json');
@@ -27,7 +29,7 @@ function watch() {
   browserSync({
     server: 'build',
     files: [{
-      match: ['src/**/*.md', 'src/scss/**/*.scss', 'src/**/*.js', 'templates/**/*.hbs', 'templates/**/*.html'],
+      match: ['src/**/*.md', 'src/**/*.html', 'src/scss/**/*.scss', 'src/**/*.js', 'templates/**/*.hbs'],
       fn: function(event, file) {
         if (event === 'change') {
           build(this.reload);
@@ -65,11 +67,19 @@ function build(callback) {
     events: {
       pattern: 'events/**/*.md',
       sortBy: 'date'
+    },
+    schedule: {
+      pattern: 'schedule/**/*.html',
+      sortBy: 'dateStart'
     }
   }));
 
+  metalsmith.use(drafts());
+
   metalsmith.use(markdown({
-    smartypants: true
+    smartypants: true,
+    gfm: true,
+    tables: true
   }));
 
   metalsmith.use(each(function(file, filename) {
@@ -100,6 +110,8 @@ function build(callback) {
 
   metalsmith.use(htmlMin());
 
+  metalsmith.use(uglify());
+
   metalsmith.build(function(err) {
     if (err) {
       throw err;
@@ -110,7 +122,8 @@ function build(callback) {
 
 Handlebars.registerPartial({
   head: fs.readFileSync(__dirname + '/templates/partials/head.hbs').toString(),
-  footer: fs.readFileSync(__dirname + '/templates/partials/footer.hbs').toString()
+  footer: fs.readFileSync(__dirname + '/templates/partials/footer.hbs').toString(),
+  scheduleNav: fs.readFileSync(__dirname + '/templates/partials/schedule-nav.hbs').toString()
 });
 
 Handlebars.registerHelper({
@@ -118,6 +131,13 @@ Handlebars.registerHelper({
     return new Handlebars.SafeString(
       '<div class="debug">' + circularJSON.stringify(context) + '</div>'
     );
+  },
+
+  slug: function(string) {
+    if (typeof string !== 'string') {
+      return;
+    }
+    return new Handlebars.SafeString(slug(string));
   },
 
   pageTitle: function(title) {
@@ -159,6 +179,16 @@ Handlebars.registerHelper({
     var d = moment(date).tz('Asia/Singapore').format(formatString);
     return new Handlebars.SafeString(d);
   },
+
+  isActive: function(current, compareTo) {
+    var newClass = '';
+    if (current === compareTo) {
+      newClass = 'active';
+    }
+
+    return new Handlebars.SafeString(newClass);
+  },
+
   setURL: setURL
 });
 
