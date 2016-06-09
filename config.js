@@ -21,32 +21,18 @@ var defaults = {
   defaultImage: baseUrl + '/img/' + ogImg,
   defaultThumb: baseUrl + '/img/' + thumb,
   logos: {
+    ntu: {
+      name: 'School of Art, Design & Media',
+      url: 'http://www.adm.ntu.edu.sg/',
+      img: 'img/logo_NTU-ADM.png',
+      width: 97,
+      height: 45
+    },
     sas: {
       name: 'Society for Animation Studies',
       url: 'http://animationstudies.org/',
       img: 'img/logo-sas.png',
       width: 86,
-      height: 45
-    },
-    ntu: {
-      name: 'Nanyang Technological University',
-      url: 'http://www.ntu.edu.sg/',
-      img: 'img/logo-ntu.png',
-      width: 123,
-      height: 45
-    },
-    hss: {
-      name: 'College of Humanities, Arts, and Social Sciences',
-      url: 'http://www.hss.ntu.edu.sg/Pages/Home.aspx',
-      img: 'img/logo-HSS.png',
-      width: 196,
-      height: 45
-    },
-    adm: {
-      name: 'School of Art, Design & Media',
-      url: 'http://www.adm.ntu.edu.sg/',
-      img: 'img/logo-adm.png',
-      width: 139,
       height: 45
     }
   }
