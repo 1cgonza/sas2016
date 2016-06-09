@@ -11,6 +11,7 @@ summary: 'A trip to visit ADM’s sister institution CCA - about 20 minutes from
 price: S$35 (US$25 / 23 Euro)
 priceInfo: Includes transportation and a catered reception (dinner)
 layout: events.hbs
+description: A trip to visit ADM's sister institution CCA - about 20 minutes from NTU/ADM main campus and located within the artistically vibrant neighborhood of Gillman Barracks.
 ---
 A trip to visit ADM’s sister institution CCA - about 20 minutes from
 NTU/ADM main campus and located within the artistically vibrant neighborhood of Gillman Barracks.
