@@ -6,3 +6,25 @@
     }
   }
 }
+
+#main-menu {
+  text-align: left;
+  padding: 0;
+
+  .sub-menu {
+    display: block;
+  }
+
+  li {
+    margin: 0.3em 0;
+    display: block;
+  }
+}
+
+.event {
+  width: 49%;
+}
+
+#schedule-nav {
+  text-align: left;
+}
