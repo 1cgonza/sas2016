@@ -1,5 +1,5 @@
 <nav id="schedule-nav">
   {{#each collections.schedule}}{{#unless archive}}
-    <a class="nav-day {{isActive ../current title}}" href="{{setURL slug true}}">{{title}}</a>
+    <a class="nav-day {{isActive ../current title}}" href="{{setURL slug true}}"><span class="schedule-day">{{setDate dateStart 'dddd' }}</span>{{title}}</a>
   {{/unless}}{{/each}}
 </nav>

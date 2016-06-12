@@ -479,6 +479,12 @@ a {
     border: 1px dotted;
     display: inline-block;
     margin: 0.1em 0;
+    text-align: center;
+
+    .schedule-day {
+      display: block;
+      font-size: 0.8em;
+    }
 
     &.active {
       color: $light-red;
@@ -616,6 +622,31 @@ a {
 }
 
 /*=====  End of SCHEDULE  ======*/
+
+/*================================
+=            KEYNOTES            =
+================================*/
+.keynote-info{
+  margin-top: 3em;
+}
+
+.keynote-picture {
+  display: inline-block;
+}
+
+.keynote-bio {
+  display: inline-block;
+  padding: 3em;
+  font-size: 0.85em;
+  background-color: rgba(255, 255, 255, 0.3);
+
+  h4 {
+    margin-top: 0;
+  }
+}
+
+
+/*=====  End of KEYNOTES  ======*/
 
 
 
