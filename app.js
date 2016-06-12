@@ -61,8 +61,7 @@ function build(callback) {
     },
     keynotes: {
       pattern: 'keynotes/**/*.md',
-      sortBy: 'date',
-      reverse: true
+      sortBy: 'order'
     },
     events: {
       pattern: 'events/**/*.md',

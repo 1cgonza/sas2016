@@ -1,3 +1,5 @@
 ---
-template: page.hbs
+layout: keynote.hbs
+title: Keynotes
+archive: true
 ---

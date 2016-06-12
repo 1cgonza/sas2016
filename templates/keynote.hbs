@@ -1,5 +1,24 @@
-{{> head current=title}}
+{{> head current='Keynotes'}}
 <article>
-  {{{ contents }}}
+  {{#if archive}}
+    {{#each collections.keynotes}}{{#unless archive}}
+      <a href="{{setURL slug true}}">{{ title }}</a>
+    {{/unless}}{{/each}}
+
+  {{else}}
+    <h2>{{ title }}</h2>
+
+    <h3>{{ title2 }}</h3>
+    {{{ contents }}}
+
+    <div class="keynote-info">
+      <div class="keynote-picture m-all t-all small-1of2 medium-1of2 large-1of3">{{ featuredImg thumb true imageW imageH }}</div>
+      <div class="keynote-bio m-all t-all small-1of2 medium-1of2 large-2of3">
+        <h4>Biography</h4>
+        {{{ bio }}}
+      </div>
+    </div>
+  {{/if}}
+
 </article>
 {{> footer }}
