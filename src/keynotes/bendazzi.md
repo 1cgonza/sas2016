@@ -7,6 +7,9 @@ image: 'GiannalbertoBendazzi.jpg'
 imageW: 1200
 imageH: 803
 thumb: 'GiannalbertoBendazzi_small.jpg'
+thumbSq: 'GiannalbertoBendazzi_sq.jpg'
+date: 2016-06-28 16:30:00 +08:00
+shortAbstract: "The future is ours. We have been existing for 29 years, and progressing. We all have worked hard, unselfishly, united. Most of us are professors, and have had to submit the results of our research to the harshest critics: the young. We were not allowed to trick or to be unoriginal. Therefore we were selected in a Darwinist way to be nonconformist; and the progress of any science is based on nonconformism."
 bio: "Giannalberto Bendazzi is the author of <i>Animation - A World History</i> (2016), an encyclopaedic book in three volumes, 1456 pages, CRC, ISBN 113894307X, 9781138943070. His previously best-known work was Cartoons, a world history published in many languages. A film critic and historian, he has been studying animation since age 19 (he is now 70). In 2001, he edited Alexeieff, Itinéraire d’un maître - Itinerary of a Master, dedicated to one of the great masters of avant-garde cinema. The book on Quirino Cristiani, the author of the first animated feature films, was published in Spanish by Ediciones de la Flor, Buenos Aires.
 <br><br>
 He extensively lectured on all continents, and taught at the Università degli Studi di Milano (2002-2009) and at the Nanyang Technological University of Singapore (2013-2015). A founding member of the Society for Animation Studies (1987), he is also adjunct professor at the Griffith University of Brisbane. Giannalberto Bendazzi wrote books on live-action cinema, too: on Woody Allen and Mel Brooks."

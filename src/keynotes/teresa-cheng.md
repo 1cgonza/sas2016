@@ -7,6 +7,9 @@ image: 'TeresaCheng.jpg'
 imageW: 1200
 imageH: 803
 thumb: 'TeresaCheng_small.jpg'
+thumbSq: 'TeresaCheng_sq.jpg'
+date: 2016-06-30 14:00:00 +08:00
+shortAbstract: "Highlights will include history of the company's first remote location and how it currently operates as part of the global team across three time zones and four sites."
 bio: "As General Manager of Lucasfilm Singapore, Teresa Cheng is responsible for both the business and production functions of the studio. Cheng brings a wealth of knowledge to the growing visual effects industry that is booming across South East Asia.
 <br><br>
 With over 20 years of animation and visual effects production experience, Teresa Cheng has played key roles as a studio executive and a producer. Cheng most recently served as Senior Production Executive overseeing production for the joint venture between DreamWorks Animation in the U.S. and the newly established Oriental DreamWorks in Shanghai.
@@ -19,6 +22,4 @@ A native of Hong Kong, Cheng moved to Seattle where she received a Bachelor of A
 ---
 <h4>Abstract</h4>
 
-Highlights will include history of the company's first remote location and
-how it currently operates as part of the global team across three time zones
-and four sites.
+Highlights will include history of the company's first remote location and how it currently operates as part of the global team across three time zones and four sites.

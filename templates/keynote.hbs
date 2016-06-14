@@ -2,7 +2,18 @@
 <article>
   {{#if archive}}
     {{#each collections.keynotes}}{{#unless archive}}
-      <a href="{{setURL slug true}}">{{ title }}</a>
+      <div class="keynote-wrapper">
+        <div class="keynote-logo m-2of3 t-1of2 small-1of3 medium-1of3 large-1of3 loading">
+          <div class="img"><a href="{{setURL slug true}}">{{ featuredImg thumbSq true }}</a></div>
+          <a class="big-btn" href="{{setURL slug true}}"><span>{{ title }}</span></a>
+        </div>
+
+        <div class="keynote-archive-info m-all t-all small-2of3 medium-2of3 large-2of3">
+          <h3><a href="{{setURL slug true}}">{{title2}}</a></h3>
+          <span class="meta-title">Date:</span> <time datetime="{{ date }}">{{ setDate date 'dddd, MMMM Do, h:mm A' }}</time>
+          <p>{{{shortAbstract}}}</p>
+        </div>
+      </div>
     {{/unless}}{{/each}}
 
   {{else}}
@@ -12,7 +23,7 @@
     {{{ contents }}}
 
     <div class="keynote-info">
-      <div class="keynote-picture m-all t-all small-1of2 medium-1of2 large-1of3">{{ featuredImg thumb true imageW imageH }}</div>
+      <div class="keynote-picture m-all t-all small-1of2 medium-1of2 large-1of3">{{ featuredImg thumb true }}</div>
       <div class="keynote-bio m-all t-all small-1of2 medium-1of2 large-2of3">
         <h4>Biography</h4>
         {{{ bio }}}
