@@ -213,10 +213,15 @@ table {
 
   .gallery-item {
     display: inline-block;
+    vertical-align: top;
 
     img {
       width: 100%;
       height: auto;
+    }
+
+    &::before {
+      width: 0;
     }
   }
 
@@ -225,6 +230,7 @@ table {
       width: 33.3%;
     }
   }
+
 }
 
 .right {
@@ -579,6 +585,12 @@ a {
   &.lobby {
     &::before {
       content: 'LOBBY'
+    }
+  }
+
+  &.lev2 {
+    &::before {
+      content: 'LEVEL 2'
     }
   }
 
