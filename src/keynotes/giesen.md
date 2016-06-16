@@ -20,6 +20,10 @@ In 2007 and 2009 was appointed Visiting Professor at the Animation School (CUC A
 <br>
 In 2013 Guest Professor at Tainan University of the Arts."
 ---
+Introduction by Mr. Sascha Kienzle  
+<i>Head of Science and Technology Department</i>  
+Embassy of the Federal Republic of Germany
+
 <h4>Abstract</h4>
 
 Hundreds and thousands of Chinese companies contribute to what they call a "strong nation of animation". Not many people in foreign countries seem to be overly enthusiastic about the mostly simple and cheap flash animation but now, with Americans, who, like Jeffrey Katzenberg years ago, looked upon Chinese animation as local production, competing with each other to enter co-production deals with a nod to the huge Chinese market and sensational box-office receipts the attitude towards Chinese media has changed. Now, in China too, it’s not quantity over quality but vice versa. Chinese product, including animation and interactive games, is destined to spread the message of Chinese culture worldwide on the threshold to virtuality. And China and Asia are very likely to have a determining influence on the way this future will wind and meander.
