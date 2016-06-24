@@ -705,11 +705,32 @@ a {
     background-color: rgba(255, 255, 255, 0.2);
   }
 }
-
-
-
 /*=====  End of KEYNOTES  ======*/
 
+/*=====================================
+=            IMAGE GALLERY            =
+=====================================*/
+#img-gallery {
+  text-align: center;
+
+  figure {
+    padding: 0.5em;
+    vertical-align: top;
+
+    img {
+      transition: opacity 0.25s ease-in-out;
+      width: 100%;
+      height: auto;
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+
+/*=====  End of IMAGE GALLERY  ======*/
 
 
 /*===================================
