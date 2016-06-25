@@ -246,7 +246,7 @@ function init() {
   function imagesReady(res) {
     if (res && res.stat == 'ok') {
       var photos = res.photos.photo;
-      console.log(res);
+
       for (var i = 0; i < photos.length; i++) {
         var imgData = photos[i];
         var obj = {
@@ -254,30 +254,30 @@ function init() {
           w: +imgData.width_z,
           h: +imgData.height_z,
           msrc: imgData.url_n,
-          title: imgData.title
-          // shareButtons: [
-          //   {
-          //     id: 'facebook',
-          //     label: 'Share on Facebook',
-          //     url: 'https://www.facebook.com/sharer/sharer.php?u={{image_url}}'
-          //   },
-          //   {
-          //     id: 'twitter',
-          //     label: 'Tweet',
-          //     url: 'https://twitter.com/intent/tweet?text={{text}}&url={{image_url}}'
-          //   },
-          //   {
-          //     id: 'pinterest',
-          //     label: 'Pin it',
-          //     url: 'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}'
-          //   },
-          //   {
-          //     id: 'download',
-          //     label: 'Download image',
-          //     url: '{{raw_image_url}}',
-          //     download: true
-          //   }
-          // ]
+          title: imgData.title,
+          shareButtons: [
+            {
+              id: 'facebook',
+              label: 'Share on Facebook',
+              url: 'https://www.facebook.com/dialog/share?app_id=1726903287597742&amp;href={{url}}&amp;picture={{raw_image_url}}'
+            },
+            {
+              id: 'twitter',
+              label: 'Tweet',
+              url: 'https://twitter.com/intent/tweet?text={{text}}&url={{image_url}}'
+            },
+            {
+              id: 'pinterest',
+              label: 'Pin it',
+              url: 'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}&description={{text}}'
+            },
+            {
+              id: 'download',
+              label: 'Download image',
+              url: '{{raw_image_url}}',
+              download: true
+            }
+          ]
         };
 
         if (imgData.hasOwnProperty('url_b')) {
