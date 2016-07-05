@@ -197,11 +197,6 @@ var galleryOptions = {
   userID: encodeURIComponent('144180648@N06')
 };
 
-// var galleryOptions = {
-//   key: 'be429e24fa8362780a1df6ff39ad2e3f',
-//   userID: encodeURIComponent('51087543@N08')
-// };
-
 function showLoadingContent() {
   var elements = document.querySelectorAll('.loading');
 
@@ -239,6 +234,7 @@ function init() {
   '&user_id=' + galleryOptions.userID +
   '&extras=url_h,url_z,url_b,url_n' +
   '&format=json' +
+  '&per_page=500' +
   '&nojsoncallback=1';
 
   fetch(url, imagesReady);
